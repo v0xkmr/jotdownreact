@@ -35,7 +35,7 @@ class Register extends Component {
         const errors = this.validate();
         this.setState({ errors: errors || {} });
         if (errors) return;
-        const { data: result } = await axios.post('http://localhost:4000/api/customer/register', this.state.register);
+        const { data: result } = await axios.post(' https://warm-stream-20780.herokuapp.com/api/customer/register', this.state.register);
         localStorage.setItem('token', result);
         this.props.history.push('/post');
         console.log(result);

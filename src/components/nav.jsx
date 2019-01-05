@@ -13,7 +13,7 @@ class NavBar extends Component {
         if (jwt) {
             const user = jwtDecoder(jwt);
             console.log(user);
-            const { data: customer } = await axios.get(`http://localhost:4000/api/customer/${user._id}`);
+            const { data: customer } = await axios.get(` https://warm-stream-20780.herokuapp.com/api/customer/${user._id}`);
             this.setState({
                 name: customer.firstName,
                 userId: user._id

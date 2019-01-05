@@ -13,7 +13,7 @@ class EditPost extends Component {
         errors: {}
     }
     async componentDidMount() {
-        const { data: post } = await axios.get(`http://localhost:4000/api/post/single/${this.props.match.params.id}`);
+        const { data: post } = await axios.get(`https://warm-stream-20780.herokuapp.com/api/post/single/${this.props.match.params.id}`);
         if (post) {
             this.setState({
                 post: {
@@ -45,7 +45,7 @@ class EditPost extends Component {
         const errors = this.validate();
         this.setState({ errors: errors || {} });
         if (errors) return;
-        const { data: result } = await axios.put(`http://localhost:4000/api/post/${this.props.match.params.id}`, this.state.post);
+        const { data: result } = await axios.put(`https://warm-stream-20780.herokuapp.com/api/post/${this.props.match.params.id}`, this.state.post);
         if (result) {
             this.props.history.push('/post')
         }

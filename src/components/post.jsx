@@ -13,7 +13,7 @@ class Post extends Component {
         if (jwt) {
             const user = jwtDecoder(jwt);
             console.log(user);
-            const { data: posts } = await axios.get(`http://localhost:4000/api/post/all/${user._id}`);
+            const { data: posts } = await axios.get(` https://warm-stream-20780.herokuapp.com/api/post/all/${user._id}`);
             this.setState({ posts: posts });
             return;
         }

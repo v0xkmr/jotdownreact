@@ -49,7 +49,7 @@ class CreatePost extends Component {
         const errors = this.validate();
         this.setState({ errors: errors || {} });
         if (errors) return;
-        const { data: result } = await axios.post('http://localhost:4000/api/post/', this.state.post);
+        const { data: result } = await axios.post('https://warm-stream-20780.herokuapp.com/api/post/', this.state.post);
         if (result) {
             this.props.history.push('/post')
         }

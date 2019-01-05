@@ -31,7 +31,7 @@ class Login extends Component {
         const errors = this.validate();
         this.setState({ errors: errors || {} });
         if (errors) return;
-        const { data: result } = await axios.post('http://localhost:4000/api/customer/login', this.state.account);
+        const { data: result } = await axios.post('https://warm-stream-20780.herokuapp.com/api/customer/login', this.state.account);
         console.log(result);
         localStorage.setItem('token', result);
         this.props.history.push('/post');
